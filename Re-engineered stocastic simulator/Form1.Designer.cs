@@ -44,6 +44,7 @@
             radioButton5 = new RadioButton();
             button1 = new Button();
             button2 = new Button();
+            radioButton6 = new RadioButton();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -135,16 +136,16 @@
             radioButton2.AutoSize = true;
             radioButton2.Location = new Point(672, 78);
             radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(63, 24);
+            radioButton2.Size = new Size(77, 24);
             radioButton2.TabIndex = 10;
             radioButton2.TabStop = true;
-            radioButton2.Text = "HW2";
+            radioButton2.Text = "HW2_1";
             radioButton2.UseVisualStyleBackColor = true;
             // 
             // radioButton3
             // 
             radioButton3.AutoSize = true;
-            radioButton3.Location = new Point(795, 50);
+            radioButton3.Location = new Point(782, 78);
             radioButton3.Name = "radioButton3";
             radioButton3.Size = new Size(63, 24);
             radioButton3.TabIndex = 11;
@@ -155,7 +156,7 @@
             // radioButton4
             // 
             radioButton4.AutoSize = true;
-            radioButton4.Location = new Point(795, 75);
+            radioButton4.Location = new Point(905, 52);
             radioButton4.Name = "radioButton4";
             radioButton4.Size = new Size(63, 24);
             radioButton4.TabIndex = 12;
@@ -166,7 +167,7 @@
             // radioButton5
             // 
             radioButton5.AutoSize = true;
-            radioButton5.Location = new Point(918, 52);
+            radioButton5.Location = new Point(905, 78);
             radioButton5.Name = "radioButton5";
             radioButton5.Size = new Size(63, 24);
             radioButton5.TabIndex = 13;
@@ -194,11 +195,23 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
+            // radioButton6
+            // 
+            radioButton6.AutoSize = true;
+            radioButton6.Location = new Point(782, 52);
+            radioButton6.Name = "radioButton6";
+            radioButton6.Size = new Size(77, 24);
+            radioButton6.TabIndex = 16;
+            radioButton6.TabStop = true;
+            radioButton6.Text = "HW2_2";
+            radioButton6.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1376, 673);
+            Controls.Add(radioButton6);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(radioButton5);
@@ -241,5 +254,6 @@
             
         private Button button1;             //START
         private Button button2;             //CLEAR
+        private RadioButton radioButton6;
     }
 }
