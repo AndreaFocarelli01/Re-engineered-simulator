@@ -261,11 +261,8 @@ namespace Re_engineered_stocastic_simulator
         {
             List<int> totalscores = new List<int>();
 
-            Pen line = new Pen(Color.Black);
-            PointF endGraph1 = new PointF(pictureBox1.Width * 0.7f, pictureBox1.Height);
-            PointF endGraph2 = new PointF(pictureBox1.Width * 0.7f, 0.0f);
-
-            graph.DrawLine(line, endGraph1, endGraph2);
+            float lineWidth = pictureBox1.Width / (float)servers;
+            float lineHeight = pictureBox1.Height / (float)servers;
 
             Random rnd = new Random();
 
@@ -281,13 +278,13 @@ namespace Re_engineered_stocastic_simulator
                 {
                     if (rnd.NextDouble() < lambda / j)
                     {
-                        PointF end = new PointF(position.X, position.Y - height);
+                        PointF end = new PointF(position.X, position.Y - lineHeight);
                         graph.DrawLine(p, position, end);
                         position = end;
                         score++;
                     }
 
-                    PointF next = new PointF(position.X + width, position.Y);
+                    PointF next = new PointF(position.X + lineWidth, position.Y);
 
                     graph.DrawLine(p, position, next);
 
@@ -297,24 +294,10 @@ namespace Re_engineered_stocastic_simulator
                 totalscores.Add(score);
             }
 
-            DrawHistogram(graph, hackers, servers, totalscores, height);
+            
             return totalscores;
         }
-        private void DrawHistogram(Graphics graph, int hackers, int servers, List<int> scores, float height)
-        {
-            var groupedScores = scores.GroupBy(i => i).OrderBy(group => group.Key);
-            float half = height / 2.0f;
-            int maxCount = groupedScores.Max(g => g.Count());
 
-            float scoreHeight = (pictureBox1.Width * 0.25f) / maxCount;
-            foreach (var grp in groupedScores)
-            {
-                SolidBrush blueBrush = new SolidBrush(Color.Coral);
-                float yPosition = pictureBox1.Height - height * grp.Key - half;
-                RectangleF rect = new RectangleF(pictureBox1.Width * 0.7f, yPosition, scoreHeight * grp.Count(), height);
-                graph.FillRectangle(blueBrush, rect);
-            }
-        }
 
 
         ////HW4 function
